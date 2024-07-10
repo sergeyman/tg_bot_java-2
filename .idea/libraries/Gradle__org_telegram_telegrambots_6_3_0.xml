@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.telegram:telegrambots:6.3.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.telegram" artifactId="telegrambots" version="6.3.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.telegram/telegrambots/6.3.0/4f50953b6755471136838608646a7a17945082a1/telegrambots-6.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

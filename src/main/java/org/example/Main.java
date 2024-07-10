@@ -271,9 +271,9 @@ public class Main extends TelegramLongPollingBot {
     public SendMessage createMessage(String text) {
         SendMessage message = new SendMessage();
 
-        //message.setText(text);
+        message.setText(text);
         // to UTF-8
-        message.setText(new String(text.getBytes(), StandardCharsets.UTF_8));
+        //message.setText(new String(text.getBytes(), StandardCharsets.UTF_8));
         message.setParseMode("markdown");
 
         return message;
@@ -291,9 +291,9 @@ public class Main extends TelegramLongPollingBot {
 
             InlineKeyboardButton button = new InlineKeyboardButton();
 
-            //button.setText(buttonName);
+            button.setText(buttonName);
             // to UTF-8 (for TG)
-            button.setText(new String(buttonName.getBytes(), StandardCharsets.UTF_8));
+            //button.setText(new String(buttonName.getBytes(), StandardCharsets.UTF_8));
             button.setCallbackData(buttonValue);
 
             keyboard.add(Arrays.asList(button));
@@ -383,6 +383,23 @@ public class Main extends TelegramLongPollingBot {					// <Alt+Enter>: Implement
    public static void main(String[] args) throws TelegramApiException {
 	TelegramBotsApi api = new TelegramBotsApi(DefaultBotSession.class);		// <Alt+Enter>: Add exception to method signature
         api.registerBot(new Main());
+
+### Coding error:
+��-��-��!
+³���� � ��� ����������� ������� ��� �������.
+�� ������� ������ �71
+
+З Вашим кодом все гаразд, це проблема кодування на комп'ютері. Скористайтесь інструкціює щоб це налаштувати 🤗
+"1)додайте в кінець файлу build.gradle ось цей фрагмент коду
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
+
+2)в методі attachButtons змініть
+button.setText(new String(buttonName.getBytes(), StandardCharsets.UTF_8)); на button.setText(buttonName);
+
+3)а в методі createMessage змініть
+message.setText(new String(text.getBytes(), StandardCharsets.UTF_8)); на message.setText(text);"
 
 2)  @Override
     public String getBotUsername() {
